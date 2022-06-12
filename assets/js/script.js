@@ -63,6 +63,11 @@ clearEl.addEventListener("click",function() {
     renderSearchHistory();
 })
 
+// save search requests and display them on the page
+renderSearchHistory();
+if (searchHistory.length > 0) {
+    getWeather(searchHistory[searchHistory.length - 1]);
+}
 
 }
 weatherDash();
