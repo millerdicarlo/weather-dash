@@ -51,6 +51,10 @@ let cityID = response.data.id;
 let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
 axios.get(forecastQueryURL)
 .then(function(response){
+//parse response
+console.log(response);
+const forecastEls = document.querySelectorAll(".forecast");
+for (i=0; i<forecastEls.length; i++) {
 
 
 // Event listener and clear
