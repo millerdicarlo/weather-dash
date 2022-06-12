@@ -13,7 +13,12 @@ function weatherDash() {
     console.log(searchHistory);
 
 
-
+    function getWeather(cityName) {
+        //  Using saved city name, execute a current condition get request from open weather map api
+                let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+                axios.get(queryURL)
+                .then(function(response){
+                    console.log(response);
 
 
 // Event listener and clear
