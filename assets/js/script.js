@@ -46,7 +46,11 @@ function weatherDash() {
         currentUVEl.innerHTML = "UV Index: ";
         currentUVEl.append(UVIndex);
     });
-
+//5-day forecast from saved city name
+let cityID = response.data.id;
+let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
+axios.get(forecastQueryURL)
+.then(function(response){
 
 
 // Event listener and clear
