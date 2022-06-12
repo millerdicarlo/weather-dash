@@ -52,6 +52,7 @@ let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + 
 axios.get(forecastQueryURL)
 .then(function(response){
 //parse response
+//CLEAN CODE HERE
     console.log(response);
     const forecastEls = document.querySelectorAll(".forecast");
     for (i=0; i<forecastEls.length; i++) {
@@ -94,6 +95,13 @@ clearEl.addEventListener("click",function() {
     searchHistory = [];
     renderSearchHistory();
 })
+
+function k2f(K) {
+    return Math.floor((K - 273.15) *1.8 +32);
+}
+
+
+
 
 // save search requests and display them on the page
 renderSearchHistory();
