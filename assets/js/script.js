@@ -100,7 +100,21 @@ function k2f(K) {
     return Math.floor((K - 273.15) *1.8 +32);
 }
 
-
+function renderSearchHistory() {
+    historyEl.innerHTML = "";
+    for (let i=0; i<searchHistory.length; i++) {
+        const historyItem = document.createElement("input");
+        // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
+        historyItem.setAttribute("type","text");
+        historyItem.setAttribute("readonly",true);
+        historyItem.setAttribute("class", "form-control d-block bg-white");
+        historyItem.setAttribute("value", searchHistory[i]);
+        historyItem.addEventListener("click",function() {
+            getWeather(historyItem.value);
+        })
+        historyEl.append(historyItem);
+    }
+}
 
 
 // save search requests and display them on the page
