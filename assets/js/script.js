@@ -13,6 +13,8 @@ function weatherDash() {
     console.log(searchHistory);
 
 
+    var APIKey = "c9a9ed03a355403f4cb9a36e931c0b4a";
+
     function getWeather(cityName) {
         //  Using city name, execute get request from open weather map api
                 let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
