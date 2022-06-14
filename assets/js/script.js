@@ -23,7 +23,7 @@ function weatherDash() {
                 .then(function(response){
                     console.log(response);
 //  Parse: display current conditions
-        //  date pull obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+        //  date pull obtained
         var currentDate = new Date(response.data.dt*1000);
         console.log(currentDate);
         var day = currentDate.getDate();
